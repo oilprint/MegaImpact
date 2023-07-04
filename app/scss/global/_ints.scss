@@ -8,9 +8,11 @@
 
 .button {
   display: block;
-  padding: 20px 46px;
+  padding: 12px 46px;
   border-radius: 12px;
   border: 1px solid $secondary;
+  font-size: 15px;
+  line-height: 1;
   font-weight: 700;
   background-color: $light;
   color: $primary;
@@ -34,6 +36,7 @@
   &--accent {
     background-color: $accent;
     color: $light;
+    border: none;
 
     &:focus {
       border-color: $primary;
