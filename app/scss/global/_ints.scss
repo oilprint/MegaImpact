@@ -1,11 +1,13 @@
 .logo {
-  
+
   &:focus {
     outline: solid 1px $secondary;
     border-radius: 4px;
   }
 }
+
 .button {
+  display: block;
   padding: 20px 46px;
   border-radius: 12px;
   border: 1px solid $secondary;
@@ -13,7 +15,7 @@
   background-color: $light;
   color: $primary;
   transition: border-color 0.4s,
-  background-color 0.4s, color 0.4s;
+    background-color 0.4s, color 0.4s;
 
   &:focus {
     border-color: $accent;
@@ -27,5 +29,23 @@
   &:active {
     background-color: $secondary;
     color: $light;
+  }
+
+  &--accent {
+    background-color: $accent;
+    color: $light;
+
+    &:focus {
+      border-color: $primary;
+    }
+
+    &:hover {
+      background-color: $secondary;
+    }
+
+    &:active {
+      background-color: $secondary;
+    }
+
   }
 }
