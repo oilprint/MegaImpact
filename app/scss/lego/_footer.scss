@@ -1,0 +1,139 @@
+.footer {
+  padding: 100px 0;
+  background-color: $secondary;
+  color: $light;
+  line-height: 1.5;
+  font-weight: 300;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-right: 50px;
+    height: fit-content;
+
+    &:focus {
+      outline: solid 1px $light;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  &__img {
+    mix-blend-mode: screen;
+  }
+
+  &__links {
+    max-width: 200px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-right: 50px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    letter-spacing: 0.06em;
+    transition: outline 0.4s, border-bottom 0.4s, font-weight 0.4s;
+
+    &:focus {
+      outline: solid 1px $light;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $light;
+    }
+
+    &:active,
+    &.current {
+      font-weight: 600;
+    }
+  }
+
+  &__contacts {
+    max-width: 320px;
+    width: 100%;
+    margin-right: 50px;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  &__address {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  &__phone {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
+    width: fit-content;
+    transition: outline 0.4s, color 0.4s, font-weight 0.4s;
+
+    &:focus {
+      outline: solid 1px $light;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      color: $dark;
+    }
+
+    &:active {
+      color: $dark;
+    }
+
+  }
+
+  &__mail {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: outline 0.4s,
+      color 0.4s,
+      font-weight 0.4s;
+
+    &:focus {
+      outline: solid 1px $light;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      color: $dark;
+      .footer__icon {
+        fill: $dark;
+      }
+    }
+
+    &:active {
+      color: $dark;
+    }
+  }
+
+  &__icon {
+    fill: $light;
+    margin-right: 8px;
+    transition: fills 0.4s;
+  }
+
+  &__social {
+    max-width: 200px;
+    width: 100%;
+  }
+
+}
