@@ -1,134 +1,31 @@
 
 $(function () {
 
-  // pagination
+    // accordeon
 
-  const prevNext = document.querySelectorAll('.pagination__btn');
-  const  numbers = document.querySelectorAll('.pagination__link');
-
-  let currentStep = 0;
-
-  const updateBtn = () => {
-    if (currentStep === 3) {
-      prevNext[1].disabled = true;
-    } else if (currentStep === 0) {
-      prevNext[0].disabled = true;
-    } else {
-      prevNext[1].disabled = false;
-      prevNext[0].disabled =false;
-    }
-  };
-
-  numbers.forEach((number, numIndex) => {
-    number.addEventListener('click', (e) => {
-      e.preventDefault();
-        
-      currentStep = numIndex;
-
-      document.querySelector('.pagination__link--active').classList.remove('pagination__link--active');
-
-      number.classList.add('pagination__link--active');
-      updateBtn();
-
-    });
-  });
-
-  prevNext.forEach(button => {
-    button.addEventListener('click', (e) => {
-      currentStep += e.target.id === 'next' ? 1 : -1;
-      numbers.forEach((number, numIndex) => {
-        console.log(numIndex, currentStep);
-
-        number.classList.toggle('pagination__link--active', numIndex === currentStep);
-        updateBtn();
-
-      });
-    });
-  });
-
-    //end pagination
-    
-  Fancybox.bind('[data-fancybox="gallery"]', {
-  });
+  const headers = document.querySelectorAll('[data-name="accordion-title"]');
+  const contents = document.querySelectorAll('[data-name="content"]')
 
   
+   
 
-  //swiper
-  const swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
-    spaceBetween: 30, 
-
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
-
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-
-  //swiper end
-
-
- 
-
-  // show more
-
-
-  $(function () {
-  if (window.location.pathname === '/show.html') {
-    const btnShow = document.querySelector('#show');
-  const cardShow = document.querySelector('[data-show]');
+  headers.forEach((header, index) => {
+    header.addEventListener('click', () => {
       
-    btnShow.addEventListener('click', function() {
-     
-      if (
-        cardShow.classList.toggle('hidden')
-
+      if (header.classList.contains('active')) {
+        header.classList.remove('active');
+        contents[index].classList.add('hidden');
         
-      ) {
-
-        btnShow.textContent = "Show more";
-
       } else {
-        btnShow.textContent = "Show Less";
+        headers.forEach((item, i) => {
+          item.classList.remove('active');
+          contents[i].classList.add('hidden');
+
+        });
+        header.classList.add('active');
+        contents[index].classList.remove('hidden');
       }
-
-    });
-  }
-
-});
-
-  // const btnShow = document.querySelector('#show');
-  // const cardShow = document.querySelector('[data-show]');
-      
-  //   btnShow.addEventListener('click', function() {
-     
-  //     if (
-  //       cardShow.classList.toggle('hidden')
-
-        
-  //     ) {
-
-  //       btnShow.textContent = "Show more";
-
-  //     } else {
-  //       btnShow.textContent = "Show Less";
-  //     }
-
-  //   });
-
-  // show more end
-  
-});
-
-
-$(function () {
-  if (window.location.pathname === '/gallery.html') {
-    var mixer = mixitup('.gallery__list');
-  }
+    })
+  });
 
 });

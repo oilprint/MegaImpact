@@ -1,0 +1,42 @@
+.logo {
+
+  &:focus {
+    outline: solid 1px $secondary;
+    border-radius: 4px;
+  }
+}
+
+.button {
+  display: block;
+  padding: 12px 46px;
+  border-radius: 12px;
+  border: 1px solid $secondary;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+  background-color: $light;
+  color: $primary;
+  transition: border-color 0.4s,
+    background-color 0.4s, color 0.4s, outline 0.4s;
+
+  &:focus {
+   outline: solid 1px $secondary;
+   outline-offset: 4px;
+  }
+
+  &:hover {
+    background-color: $secondary;
+    color: $light;
+  }
+
+  &:active {
+    background-color: $primary;
+    color: $light;
+  }
+
+  &--accent {
+    background-color: $accent;
+    color: $light;
+    border: none;
+  }
+}

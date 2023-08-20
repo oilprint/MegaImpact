@@ -24,5 +24,4 @@ $(function () {
     e.stopPropagation();
   });
 
-
 });
