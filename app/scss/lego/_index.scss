@@ -4,19 +4,19 @@
     background-repeat: no-repeat;
     background-position: right;
     background-size: 45%;
-    padding: 110px 0;
+    padding: 120px 0;
     margin-bottom: 50px;
   }
 
   &__content {
-    max-width: 600px;
+    max-width: 560px;
     width: 100%;
   }
 
   &__title {
     font-family: 'Roboto',
       sans-serif;
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.1;
     color: $primary;
@@ -26,7 +26,7 @@
   &__text {
     font-family: 'Roboto',
       sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
     margin-bottom: 60px;
   }
@@ -90,21 +90,16 @@
   }
 
   &__subtitle {
-    max-width: 840px;
-    width: 100%;
-    margin: 0 auto 80px;
-    font-size: 32px;
-    font-weight: 300;
-    text-align: center;
+    margin-bottom: 60px;
   }
 
   &__inner {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 0;
+    padding: 30px 0;
     background-repeat: no-repeat;
     background-position: left;
-    background-size: 48%;
+    background-size: 46%;
   }
 
   &__content {
@@ -122,7 +117,7 @@
     padding-left: 16px;
 
     &:not(:last-child) {
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
 
     &::before {
@@ -141,7 +136,7 @@
   &__headline {
     font-family: 'Roboto',
       sans-serif;
-    font-size: 36px;
+    font-size: 24px;
     color: $secondary;
   }
 
@@ -149,7 +144,7 @@
 
 .adv {
   background-color: $bg-accent;
-   
+
   &__title {
     margin-bottom: 60px;
   }
@@ -163,14 +158,14 @@
     position: relative;
     width: calc((100% - 3 * 30px) / 4);
     padding: 140px 20px 30px;
-     background-color: $light;
-     border-radius: 20px;
-     text-align: center;
+    background-color: $light;
+    border-radius: 20px;
+    text-align: center;
 
-     &::before {
+    &::before {
       position: absolute;
       content: '';
-      top: 30px;
+      top: 40px;
       left: 50%;
       transform: translateX(-50%);
       width: 80px;
@@ -178,30 +173,30 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-     }
+    }
 
-     &--goal::before {
+    &--goal::before {
       background-image: url('../images/decor/goal.svg');
-     }
+    }
 
-     &--result::before {
-       background-image: url('../images/decor/result.svg');
-     }
+    &--result::before {
+      background-image: url('../images/decor/result.svg');
+    }
 
-     &--team::before {
-       background-image: url('../images/decor/team.svg');
-     }
+    &--team::before {
+      background-image: url('../images/decor/team.svg');
+    }
 
-     &--start::before {
-       background-image: url('../images/decor/start.svg');
-     }
+    &--start::before {
+      background-image: url('../images/decor/start.svg');
+    }
 
 
   }
 
   &__headline {
     font-family: 'Roboto',
-    sans-serif;
+      sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 16px;
@@ -209,3 +204,98 @@
 
 
 }
+
+.question {
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 60px;
+  }
+
+  &__inner {
+    padding: 30px 0;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 47%;
+  }
+
+}
+
+.accordion {
+  max-width: 570px;
+  width: 100%;
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 8px;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: left;
+    border-bottom: 1px solid $grey;
+    background-color: $light;
+
+    &:hover {
+      background-color: rgba($secondary, 0.2);
+    }
+
+    &:focus {
+      border: 1px solid $secondary;
+    }
+
+     &.active {
+      background-color: $light;
+         color: $secondary;
+       
+       .accordion__icon {
+         transform: rotate(90deg);
+       }
+     }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__content {
+    padding: 16px 30px;
+    background-color: $bg-accent;
+    height: auto;
+    transition: -height 0.2s ease-out;
+
+    &.hidden {
+       padding: 0 30px;
+      height: 0; 
+      overflow: hidden;
+    }
+  }
+}
+
+.subscribe {
+  background-color: $bg-accent;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 60px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 790px;
+    width: 100%;
+    padding: 8px;
+    background-color: $light;
+    border-radius: 12px;
+  }
+}
+

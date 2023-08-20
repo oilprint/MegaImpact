@@ -25,7 +25,7 @@
     <div class="container header__container">
       <nav class="header__nav">
         <a class="logo header__logo" href="#">
-          <img class="logo__img" src="images/logo.svg" alt="Logo MegaImpact" width="355" height="60">
+          <img class="logo__img" src="images/logo.svg" alt="Logo MegaImpact" width="280" height="48">
         </a>
 
         <ul class="header__list">
@@ -51,11 +51,36 @@
           </li>
         </ul>
       </nav>
-      <button class="button" type="button">
+      <button class="button" type="button" data-modal-button>
         Request Quote
       </button>
     </div>
   </header>
+
+  <div class="backdrop hidden" id="order" data-modal>
+    <div class="modal">
+      <div class="modal__box">
+        <p class="modal__text">
+          Describe your question and our manager will contact you shortly
+        </p>
+        <form class="form modal__form" action="#">
+          <label for="email" class="sr-only">Enter Your Email</label>
+          <input type="email" class="form__input modal__input" id="email" name="mail" placeholder="Enter your email" required>
+          <textarea class="form__input modal__input form__input--textarea " name="question" id="text"
+            placeholder="Your question" required></textarea>
+          <button class="form__button form__button--accent" type="submit">
+            Contact Us
+          </button>
+        </form>
+      </div>
+
+      <button class="modal__btn" type="button" data-modal-close>
+        <svg class="modal__icon" width="24" height="24">
+          <use href="images/symbol-defs.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <main>
     <section class="hero">
@@ -69,9 +94,9 @@
               Using a wide spectrum of unique technologies
             </p>
             <div class="hero__links">
-              <a class="button hero__button" href="#">
+              <button class="button hero__button" type="button" data-modal-button>
                 Contact Us
-              </a>
+              </button>
               <a class="button button--accent hero__button" href="#">
                 Learn More
               </a>
@@ -144,7 +169,7 @@
         <h2 class="title about__title">
           Struggling with <span class="text-color"> scaling </span> your business
         </h2>
-        <p class="about__subtitle">
+        <p class="about__subtitle subtitle">
           Mine Marketing is innovative and growth oriented agency that will help you to acquire and retain
           customers
         </p>
@@ -192,7 +217,7 @@
                 </p>
               </li>
             </ul>
-            <button class="button button--accent" type="button">
+            <button class="button button--accent" type="button" data-modal-button>
               Request Quote
             </button>
           </div>
@@ -241,7 +266,114 @@
         </ul>
       </div>
     </section>
+
+    <section class="question section">
+      <div class="container">
+        <h2 class="title question__title">
+          Do you have <span class="text-color">questions</span>?
+        </h2>
+        <p class="subtitle question__subtitle">
+          Frequently asked questions
+        </p>
+        <div class="question__inner" style="background-image: url(images/decor/question-bg.jpg);">
+          <ul class="accordion">
+            <li class="accordion__item">
+              <button class="accordion__button" type="button" data-name="accordion-title">
+                How can you help my business?
+                <svg class="accordion__icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-chevron"></use>
+                </svg>
+              </button>
+
+              <div class="accordion__content hidden" data-name="content">
+                Your location doesn’t really matter, because we work with the clients all across the world. If you are
+                looking for new business opportunities for your brand, if you want to tap into new markets then don’t
+                wait, since we are always ready to help you!
+              </div>
+            </li>
+            <li class="accordion__item">
+              <button class="accordion__button" type="button" data-name="accordion-title">
+                What kind of businesses do you work with?
+                <svg class="accordion__icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-chevron"></use>
+                </svg>
+              </button>
+
+              <div class="accordion__content hidden" data-name="content">
+                Your location doesn’t really matter, because we work with the clients all across the world. If you are
+                looking for new business opportunities for your brand, if you want to tap into new markets then don’t
+                wait, since we are always ready to help you!
+              </div>
+            </li>
+            <li class="accordion__item">
+              <button class="accordion__button" type="button" data-name="accordion-title">
+                When will I get results?
+                <svg class="accordion__icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-chevron"></use>
+                </svg>
+              </button>
+
+              <div class="accordion__content hidden" data-name="content">
+                Your location doesn’t really matter, because we work with the clients all across the world. If you are
+                looking for new business opportunities for your brand, if you want to tap into new markets then don’t
+                wait, since we are always ready to help you!
+              </div>
+            </li>
+            <li class="accordion__item">
+              <button class="accordion__button" type="button" data-name="accordion-title">
+                What if I am from another country?
+                <svg class="accordion__icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-chevron"></use>
+                </svg>
+              </button>
+
+              <div class="accordion__content hidden" data-name="content">
+                Your location doesn’t really matter, because we work with the clients all across the world. If you are
+                looking for new business opportunities for your brand, if you want to tap into new markets then don’t
+                wait, since we are always ready to help you!
+              </div>
+            </li>
+            <li class="accordion__item">
+              <button class="accordion__button" type="button" data-name="accordion-title">
+                How Facebook and Google can help to grow my business?
+                <svg class="accordion__icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-chevron"></use>
+                </svg>
+              </button>
+
+              <div class="accordion__content hidden" data-name="content">
+                Your location doesn’t really matter, because we work with the clients all across the world. If you are
+                looking for new business opportunities for your brand, if you want to tap into new markets then don’t
+                wait, since we are always ready to help you!
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      </div>
+
+    </section>
+
+    <section class="subscribe section">
+      <div class="container">
+        <h2 class="title subscribe__title">
+          Get in touch with us:
+        </h2>
+        <p class="subtitle subscribe__subtitle">
+          Do you want to be noticed about updates?
+        </p>
+        <form class="form subscribe__form" action="#">
+          <label for="mail" class="sr-only"></label>
+          <input class="form__input" id="mail" type="email" name="mail" placeholder="Enter Your Email">
+          <button class="form__button" type="submit">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
   </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -300,11 +432,7 @@
         </li>
       </ul>
       <ul class="footer__bottom">
-        <li class="footer__bottom-item">
-          <span class="footer__text">
-            @Copyright
-          </span>
-        </li>
+
         <li class="footer__bottom-item">
           <a class=" footer__bottom-link" href="#">
             Privacy policy
