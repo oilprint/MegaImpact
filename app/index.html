@@ -21,6 +21,14 @@
 </head>
 
 <body>
+  <div class="loader">
+    <div class="loader__title"> loader
+
+    </div>
+    <div class="loader__item loader__item-1"></div>
+    <div class="loader__item loader__item-2"></div>
+    <div class="loader__item loader__item-3"></div>
+  </div>
   <header class="header">
     <div class="container header__container">
       <nav class="header__nav">
@@ -85,7 +93,7 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="hero__inner" style="background-image: url('images/decor/hero-bg.jpg');">
+        <div class="hero__inner" >
           <div class="hero__content">
             <h1 class="hero__title">
               Mining the <p class="text-color"> Best Performance </p> in online marketing
@@ -94,14 +102,15 @@
               Using a wide spectrum of unique technologies
             </p>
             <div class="hero__links">
-              <button class="button hero__button" type="button" data-modal-button>
+              <button class="button hero__button hero__button-1" type="button" data-modal-button>
                 Contact Us
               </button>
-              <a class="button button--accent hero__button" href="#">
+              <a class="button button--accent hero__button hero__button-2" href="#">
                 Learn More
               </a>
             </div>
           </div>
+          <img class="hero__img" src="./images/decor/hero.jpg" alt="" width="500" height="400">
         </div>
       </div>
       <ul class="hero__partners">
@@ -173,7 +182,7 @@
           Mine Marketing is innovative and growth oriented agency that will help you to acquire and retain
           customers
         </p>
-        <div class="about__inner" style="background-image: url(images/decor/about-bg.jpg);">
+        <div class="about__inner" >
           <div class="about__content">
             <ul class="about__list">
               <li class="about__item">
@@ -221,7 +230,9 @@
               Request Quote
             </button>
           </div>
+          <img class="about__img" src="./images/decor/about-bg.jpg" alt="" width="400" height="500">
         </div>
+        
       </div>
     </section>
 
@@ -355,6 +366,22 @@
 
     </section>
 
+    <section class="gallery section">
+      <div class="container">
+        <h2 class="gallery__title title">
+          Gallery
+        </h2>
+        <div class="gallery__photo">
+          <img class="gallery__img" src="./images/decor/about-bg.jpg" alt="" width="200" height="200">
+          <img class="gallery__img" src="./images/decor/about-bg.jpg" alt="" width="200" height="200">
+          <img class="gallery__img" src="./images/decor/about-bg.jpg" alt="" width="200" height="200">
+          <img class="gallery__img" src="./images/decor/about-bg.jpg" alt="" width="200" height="200">
+          <img class="gallery__img" src="./images/decor/about-bg.jpg" alt="" width="200" height="200">
+          <img class="gallery__img" src="./images/decor/about-bg.jpg" alt="" width="200" height="200">
+        </div>
+      </div>
+    </section>
+
     <section class="subscribe section">
       <div class="container">
         <h2 class="title subscribe__title">
@@ -447,6 +474,8 @@
 
     </div>
   </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <script src=" js/main.min.js"> </script>
 </body>

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.19",
+    "gsap": "^3.12.5",
     "save-dev": "^0.0.1-security",
     "swiper": "^9.4.1"
   }

@@ -39,7 +39,8 @@ function scripts() {
     'node_modules/swiper/swiper-bundle.js',
     'node_modules/mixitup/dist/mixitup.js',
     'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
-    'app/js/modal.js',  
+    'app/js/modal.js',
+    'app/js/gsap.js',
     'app/js/main.js'  
   ])
   .pipe(concat('main.min.js')) 
