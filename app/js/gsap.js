@@ -236,33 +236,26 @@ const tlLoader = gsap.timeline()
 
 //lenis-smoth scroll
 
-// const lenis = new Lenis()
-
-// lenis.on('scroll', (e) => {
-//   console.log(e)
-// })
-
-// function raf(time) {
-//   lenis.raf(time)
-//   requestAnimationFrame(raf)
-// }
-
-// requestAnimationFrame(raf)
-
 //integration lenis on GSAP ScrollTrigger
-const lenis = new Lenis()
+const lenis = new Lenis({
+		duration: 1.2
+	})
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
+	lenis.on('scroll', (e) => {
+		console.log(e)
+	})
+	function raf(time) {
+		lenis.raf(time)
+		requestAnimationFrame(raf)
+	}
+	requestAnimationFrame(raf)
 
-lenis.on('scroll', ScrollTrigger.update)
+	//Integration Lenis on GSAP ScrollTrigger
+	lenis.on('scroll', ScrollTrigger.update)
 
-gsap.ticker.add((time)=>{
-  lenis.raf(time * 1000)
-})
-
-gsap.ticker.lagSmoothing(0)
+	gsap.ticker.add((time) => {
+		lenis.raf(time * 1000)
+	})
 
 //scrollTrigger
 
@@ -293,3 +286,47 @@ ScrollTrigger.create({
   scrub: true,
 })
 
+/////////////////////////////////////////////////
+//gsap-slider
+
+function scrollTrig() {
+
+
+		// let gsapBl = $('.gsap__bl').width();
+		let gsapBl = document.querySelector('.gsap__bl').offsetWidth;
+
+		//On full width
+		// $('.gsap__item').css('width', gsapBl + 'px');
+
+		//Transform slider track
+		let gsapTrack = document.querySelector('.gsap__track').offsetWidth;
+		let scrollSliderTransform = gsapTrack - gsapBl
+
+
+		//Create ScrollTrigger
+		gsap.to('.gsap__track', {
+			scrollTrigger: {
+				trigger: '.gsap_slider',
+				start: 'center center',
+				end: () => '+=' + gsapTrack,
+				pin: true,
+				scrub: true,
+        markers:true
+			},
+			x: '-=' + scrollSliderTransform + 'px'
+		});
+
+	}
+	scrollTrig();
+
+
+  //resize window
+	const debouncedResize = _.debounce(onWindowResize, 500);
+	function onWindowResize() {
+		console.log('Window resized!');
+		location.reload();
+	}
+	
+  window.addEventListener('resize', debouncedResize);
+
+  //////////////////////////////
