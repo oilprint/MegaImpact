@@ -221,14 +221,75 @@ const tlLoader = gsap.timeline()
 //animationn for desktop
 
 
-gsap.to('.hero', {
-    scrollTrigger: {
-    trigger: '.hero__inner',
-    start: 'top top',
-    scrub: true, 
-    markers: true
-  },
-  backgroundColor: "#6222C6"
+// gsap.to('.hero', {
+//     scrollTrigger: {
+//     trigger: '.hero__inner',
+//     start: 'top top',
+//     scrub: true, 
+//     markers: true
+//   },
+//   backgroundColor: "#6222C6"
   
+// })
+
+
+
+//lenis-smoth scroll
+
+// const lenis = new Lenis()
+
+// lenis.on('scroll', (e) => {
+//   console.log(e)
+// })
+
+// function raf(time) {
+//   lenis.raf(time)
+//   requestAnimationFrame(raf)
+// }
+
+// requestAnimationFrame(raf)
+
+//integration lenis on GSAP ScrollTrigger
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
+
+//scrollTrigger
+
+let workInfoItems = document.querySelectorAll('.work__photo-item');
+workInfoItems.forEach((item, index) => {
+  item.style.zIndex = workInfoItems.length - index;
+});
+
+gsap.set('.work__photo-item', {
+  clipPath: function () {
+    return 'inset(0px 0px 0px 0px)'
+  }
+});
+
+const animation = gsap.to('.work__photo-item:not(:last-child)', {
+  clipPath: function () {
+    return 'inset(0px 0px 100% 0px)'
+  },
+  stagger: 0.5,
+  ease: 'none',
+});
+
+ScrollTrigger.create({
+  trigger: '.work',
+  start:'top top',
+  end: 'bottom bottom',
+  animation: animation,
+  scrub: true,
 })
 

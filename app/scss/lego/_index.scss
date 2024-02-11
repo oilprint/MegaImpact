@@ -33,6 +33,125 @@
 
 
 }
+.spacer {
+  width: 100%;
+  height: 50vh;
+  background: $secondary;
+}
+.work {
+  display: flex;
+
+  &__left {
+    position: relative;
+    width: 50%;
+    z-index: 2;
+    outline: 1px solid red;
+  }
+
+  &__text {
+    margin: auto;
+    width: 80%;
+  }
+
+  &__info {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: 1px solid green;
+  }
+
+  &__number {
+    display: block;
+    line-height: 0.9;
+    text-align: right;
+    font-size: 18px;
+    transform: skewX(-20deg);
+    color: $accent;
+  }
+
+  &__title {
+    text-align: right;
+    font-size: 70px;
+    text-transform: uppercase;
+    color: $accent;
+  }
+
+  &__stroke {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px $accent;
+  }
+
+  &__link {
+    display: block;
+    width: 365px;
+    margin-top: 50px;
+    margin-left: auto;
+    padding: 18px 0;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $primary;
+    letter-spacing: 4px;
+    border: 2px solid $accent;
+    border-radius: 30px;
+    transition: 0.4s;
+
+    &:hover {
+      background: $accent;
+      color: $secondary;
+      letter-spacing: 6px;
+    }
+  }
+
+  &__right {
+    width: 46%;
+    height: auto;
+    background: green;
+  }
+
+  &__right-bl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    // height: 80vh;
+    // top: 10vh;
+    // background: #ff6b4f;
+  }
+
+  &__photo {
+    width: 40vw;
+    height: 30vw;
+    position: relative;
+  }
+
+  &__photo-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 80px;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+
+
+}
 
 .hero {
 
